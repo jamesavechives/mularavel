@@ -1,0 +1,46 @@
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 100;
+  src: url("css/fonts/sanfranciscodisplay-ultralight-webfont.woff2");
+}
+
+/** Thin */
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 200;
+  src: url("css/fonts/sanfranciscodisplay-thin-webfont.woff2");
+}
+
+/** Regular */
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 400;
+  src: url("css/fonts/sanfranciscodisplay-regular-webfont.woff2");
+}
+
+/** Medium */
+@font-face {
+  font-family: "San Francisco";
+  font-weight: normal;
+  src: url("css/fonts/sanfranciscodisplay-medium-webfont.woff2");
+}
+
+/** Semi Bold */
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 500;
+  src: url("css/fonts/sanfranciscodisplay-semibold-webfont.woff2");
+}
+
+/** Bold */ 
+@font-face {
+  font-family: "San Francisco";
+  font-weight: bold;
+  src: url("css/fonts/sanfranciscodisplay-bold-webfont.woff2");
+}
+
+$font__main: "San Francisco", sans-serif;
+$font__code: "San Francisco";
+$font__pre: "Courier 10 Pitch", Courier, monospace;
+$font__line-height-body: 1.5;
+$font__line-height-pre: 1.6;

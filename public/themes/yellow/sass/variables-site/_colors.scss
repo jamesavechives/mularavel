@@ -1,0 +1,47 @@
+$color__background-body: #223245;
+$color__background-screen: #f1f1f1;
+$color__background-hr: #ccc;
+$color__background-button: #495A70;
+$color__background-pre: #eee;
+$color__background-ins: #fff9c0;
+$color__background-panel-sidebar1: #27374A;
+$color__background-panel-sidebar2: #192638; 
+$color__background-input: #151e2a;
+$color__background-input-validate: #3EB396;
+$color__background-header: #111E2E;
+$color__background-menu-selected: #47586C;
+$color__background-popup: #364455;
+$color__background-card-info: rgba(16,32,42,0.6);
+$color__background-table-tr2n: #1D2E40;
+$color__background-slider-main: #121E2D;
+$color__background-slider-active: #3680B3;
+$color__background-button-unselected: #16212F;
+$color__background-outline-button-unselected: #64798C;
+$color__background-button-selected: #495A70;
+$color__background-outline-button-selected: #7F9FB6;
+
+$color__text-screen: #21759b;
+$color__text-input: #fff;
+$color__text-input-focus: #fff;
+$color__link: royalblue;
+$color__link-visited: purple;
+$color__link-hover: midnightblue;
+$color__text-main: #fff;
+$color__home-menu: #031E41;
+
+$color__border-button: #ccc #ccc #bbb;
+$color__border-button-hover: #ccc #bbb #aaa;
+$color__border-button-focus: #aaa #bbb #bbb;
+$color__border-input: #4b5762;
+$color__border-abbr: #666;
+
+
+/* WIDTH */
+$global_margin: 15px;
+$global_padding: 30px;
+$app_setting_menu_width: 210px;
+$width__modal-md: 55%;
+$height__hotspot-content: calc(100% - #{$app_setting_menu_width});
+$height__masthead: 63px;
+$height__masthead-mobile: 43px;
+$height__button: 75px;

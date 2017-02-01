@@ -1,0 +1,119 @@
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
+body {
+	background: $color__background-body; /* Fallback for when there is no custom background color defined. */
+}
+
+blockquote, q {
+	quotes: "" "";
+
+	&:before,
+	&:after {
+		content: "";
+	}
+}
+
+h1 {
+	text-align: center;
+}
+
+header#masthead {
+	background: $color__background-header;
+}
+
+.padding-wrapper {
+	padding: $global_padding;
+}
+
+.app-settings-menu {
+	background: $color__background-panel-sidebar1;
+	float: left;
+    width: $app_setting_menu_width;
+    height: 100%;
+
+	a.active {
+		background: $color__background-menu-selected;
+	}
+}
+
+hr {
+	background-color: $color__background-hr;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+@import "lists";
+
+img {
+	height: auto; /* Make sure images are scaled correctly. */
+	max-width: 100%; /* Adhere to container width. */
+}
+
+@import "tables";
+
+
+/* GRID SYSTEM */
+.container:after, .row, .row:after {
+	clear: both;
+}
+.col-vm-md-3, .col-vm-md-9, .col-vm-md-6 {
+	float: left;
+}
+
+@media (min-width: 480px) {
+	.col-vm-md-3 {
+		width: 100%;
+	}
+	.col-vm-md-9 {
+		width: 100%;
+	}
+}
+@media (min-width: 768px) {
+	.col-vm-md-9 {
+		width: 75%;
+	}
+	.col-vm-md-6 {
+		width: 50%;
+	}
+	.col-vm-md-3 {
+		width: 50%;
+	}
+}
+@media (min-width: 992px) {
+	.col-vm-md-9 {
+		width: 75%;
+	}
+	.col-vm-md-6 {
+		width: 50%;
+	}
+	.col-vm-md-3 {
+		width: 25%;
+	}
+}
+
+@media (max-width: 480px) {
+	
+	h1 {
+		font-size: 1.7em;
+		text-transform: uppercase;
+	}
+	h2, h3 {
+		text-align: center;
+	}
+
+	.col-vm-md-3, .col-vm-md-6 {
+		width: 100%;
+	}
+	.col-vm-md-9 {
+		width: 100%;
+	}
+}
