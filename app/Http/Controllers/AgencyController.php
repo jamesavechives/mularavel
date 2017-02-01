@@ -29,6 +29,13 @@ class AgencyController extends Controller
         return view('agency/home',['menus'=>$m_list,'id'=>$id,'title'=>$title],compact('theme'));
         
     }
+    protected function pairApp($id)
+    {
+        $theme=DB::table('agencies')->where(['id'=>$id])->value('theme');
+        $title="Pairing App-".DB::table('agencies')->where(['id'=>$id])->value('site_name');
+        return view('agency/pairing-app',['id'=>$id,'title'=>$title],compact('theme'));
+        
+    }
     
     protected function showAddagency()
     {

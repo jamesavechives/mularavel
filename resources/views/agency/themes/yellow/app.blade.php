@@ -48,7 +48,7 @@ img.emoji {
 
             <header id="masthead" class="site-header" role="banner">
                 <div class="header-logo">
-                                            <a href="" rel="home"><img src="{{url('themes/yellow/images/logo-vm.png')}}" width="" height=""/></a>
+                                            <a href="#" onclick="getHome();return false;" rel="home"><img src="{{url('themes/yellow/images/logo-vm.png')}}" width="" height=""/></a>
                                     </div><!-- .site-branding -->
 
                 <div class="header-newsfeed">
@@ -99,6 +99,22 @@ img.emoji {
 <script type='text/javascript' src='{{url('themes/yellow/js/hammer.min.js')}}?ver=2.0.8'></script>
 <script type='text/javascript' src='{{url('themes/yellow/js/hammer-time.min.js')}}?ver=1.1.0'></script>
 <script type='text/javascript' src='{{url('themes/yellow/js/jquery.hammer.js')}}?ver=1.0'></script>
-
+        <script type="text/javascript">
+                    function getHome()
+                    {
+                        var fullLink=window.location.href;
+                        var host=fullLink.substring(0,fullLink.indexOf("agency"));
+                        var rest=fullLink.substring(fullLink.indexOf("agency")+7);
+                        if(rest.indexOf('/')!=-1)
+                        {
+                        var id=rest.substring(0,rest.indexOf('/'));
+                        }
+                        else
+                        {
+                            id=rest;
+                        }
+                        window.location=host+"agency/"+id;
+                    }
+         </script>
 </body>
 </html>
