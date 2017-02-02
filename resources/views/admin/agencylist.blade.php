@@ -21,6 +21,7 @@
                         <th>Theme</th>
                         <th>Description</th>
                         <th>View Site</th>
+                        <th>Users</th>
                     </thead>
 
                     <!-- Table Body -->
@@ -42,6 +43,9 @@
                                 </td>
                                 <td>
                                     <a href="{{url('/agency/')}}/{{$agency->id}}" target="_blank">view site</a>
+                                </td>
+                                <td>
+                                    <a href="{{url('/admin/agencyusers/')}}/{{$agency->id}}" >users</a>
                                 </td>
                             </tr>
                         @endforeach

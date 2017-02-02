@@ -43,6 +43,7 @@ Route::group(array('prefix' => 'admin'), function() {
     Route::post('/addagency', 'AgencyController@addAgency');
 
     Route::get('/agencylist', 'AgencyController@showAgencylist');
+    Route::get('/agencyusers/{id}',['uses'=>'AgencyController@agencyUserlist']);
 });
 
 Route::group(array('prefix' => 'agency'), function() {

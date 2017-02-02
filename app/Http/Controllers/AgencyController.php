@@ -87,4 +87,9 @@ class AgencyController extends Controller
         return view('admin/agencylist',['agencylist'=>$agencylist]);
     }
     
+    protected function agencyUserlist($id)
+    {
+        
+    }
+    
 }
