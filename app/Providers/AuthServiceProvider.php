@@ -111,5 +111,13 @@ class AuthServiceProvider extends ServiceProvider
                     ])->count();
             return ($count>0);
         });
+         // Visit this agency site permission
+        Gate::define('visit-this-agency-site', function($user,$agency_id) {
+            $count=DB::table('agency_users')->where([
+                ['agency_id','=',$agency_id],
+                ['user_id','=',$user->id]
+               ])->count();
+            return ($count>0);
+        });
     }
 }

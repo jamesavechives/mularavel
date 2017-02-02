@@ -90,7 +90,7 @@
                      @if (isset($menus))
                     <ul>
                         @foreach ($menus as $menu)
-                        <li><a href="{{$menu->uri}}" >{{$menu->display_name}}</a></li>
+                        <li><a href="{{url("/admin")}}/{{$menu->uri}}" >{{$menu->display_name}}</a></li>
                         @endforeach
                     </ul>
                      @endif

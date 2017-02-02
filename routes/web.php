@@ -39,14 +39,15 @@ Route::group(array('prefix' => 'admin'), function() {
     Route::get('/addmenu', 'MenuController@showAddmenu');
     Route::post('/addmenu', 'MenuController@createMenu');
 
-    Route::get('/addagency', 'AgencyController@showAddagency');
-    Route::post('/addagency', 'AgencyController@addAgency');
+    Route::get('/addagency', 'ResellerController@showAddagency');
+    Route::post('/addagency', 'ResellerController@addAgency');
 
-    Route::get('/agencylist', 'AgencyController@showAgencylist');
-    Route::get('/agencyusers/{id}',['uses'=>'AgencyController@agencyUserlist']);
+    Route::get('/addagencyuser','ResellerController@addAgencyuser');
+    Route::get('/deleteagencyuser','ResellerController@deleteAgencyuser');
     
-    Route::get('/addagencyuser','AgencyController@addAgencyuser');
-    Route::get('/deleteagencyuser','AgencyController@deleteAgencyuser');
+    Route::get('/agencylist', 'ResellerController@showAgencylist');
+    Route::get('/agencyusers/{id}',['uses'=>'ResellerController@agencyUserlist']);
+    
 });
 
 Route::group(array('prefix' => 'agency'), function() {
