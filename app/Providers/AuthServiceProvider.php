@@ -119,5 +119,6 @@ class AuthServiceProvider extends ServiceProvider
                ])->count();
             return ($count>0);
         });
+        
     }
 }
