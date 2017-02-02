@@ -44,6 +44,9 @@ Route::group(array('prefix' => 'admin'), function() {
 
     Route::get('/agencylist', 'AgencyController@showAgencylist');
     Route::get('/agencyusers/{id}',['uses'=>'AgencyController@agencyUserlist']);
+    
+    Route::get('/addagencyuser','AgencyController@addAgencyuser');
+    Route::get('/deleteagencyuser','AgencyController@deleteAgencyuser');
 });
 
 Route::group(array('prefix' => 'agency'), function() {

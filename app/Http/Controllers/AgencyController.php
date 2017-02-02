@@ -89,7 +89,26 @@ class AgencyController extends Controller
     
     protected function agencyUserlist($id)
     {
-        
+       $a_ulist=DB::table('agency_users')->where(['agency_id'=>$id])->pluck('user_id')->all(); 
+       $u_list=DB::table('users')->whereIn("users.id", $a_ulist)
+               ->leftJoin('roles', 'users.role_id', '=', 'roles.id')
+            ->select('users.*','roles.name as role_name')->paginate(10);
+       $nu_list=DB::table('users')->whereNotIn("users.id", $a_ulist)
+               ->leftJoin('roles', 'users.role_id', '=', 'roles.id')
+            ->select('users.*','roles.name as role_name')->paginate(10);
+       $agency=DB::table('agencies')->where(['id'=>$id])->first();
+       return view('admin/agencyusers',['users'=>$u_list,'others'=>$nu_list,'agency'=>$agency]);
     }
     
+    protected function addAgencyuser(Request $request)
+    {
+       $result= DB::insert('insert into agency_users(agency_id, user_id) values (?, ?)', [$request->input('agency_id'), $request->input('user_id')]);
+       return ($result?"success":"error");
+    }
+    
+    protected function deleteAgencyuser(Request $request)
+    {
+        $result=DB::table('agency_users')->where(['agency_id'=>$request->input('agency_id'),'user_id'=>$request->input('user_id')])->delete();
+        return ($result?"success":"error");
+    }
 }
