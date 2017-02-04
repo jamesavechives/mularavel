@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Gate;
 use Route;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 
 class AgencyController extends Controller
 {
@@ -49,6 +50,11 @@ class AgencyController extends Controller
         {
             echo "You can not visit this agency site!";
         }
+    }
+    protected function get_mac_list(Request $request)
+    {
+        $mac_add=DB::table('pairing_app')->where(['agency_id'=>$request->input('agency_id')])->pluck('mac_address');
+        return json_encode($mac_add);
     }
     
 }

@@ -53,6 +53,7 @@ Route::group(array('prefix' => 'admin'), function() {
 Route::group(array('prefix' => 'agency'), function() {
     Route::get('{id}/', ['uses'=>'AgencyController@home']);
     Route::get('{id}/pairing-app', ['uses'=>'AgencyController@pairApp']);
+    Route::get('{id}/getmaclist','AgencyController@get_mac_list');
 });
 
 
